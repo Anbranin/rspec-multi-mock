@@ -1,20 +1,13 @@
 require 'rubygems'
-require 'mocha/object'
 require 'mocha/api'
 
 # The following begin/rescue block idea was taken from 
 # rspec/core/mocking_adapters/mocha.rb
 
 begin
-  require 'mocha/api'
-  
-  begin
-    require 'mocha/object'
-  rescue LoadError
-  end
-rescue LoadError
-  require 'mocha/standalone'
   require 'mocha/object'
+  
+rescue LoadError
 end
 
 module MultiMock
